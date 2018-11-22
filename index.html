@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #content{
+            width: 200px;
+            height: 200px;
+            background: darkred;
+            position: relative;
+        }
+        #box{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: white;
+        }
+    </style>
+</head>
+<body>
+<div>
+   <div id="content">
+       <div  id="box"></div>
+   </div>
+</div>
+<script>
+var box = document.getElementById('box');
+var left = 0;
+var topUp = 0;
+var right = 150;
+var bottomDown = 150;
+function move() {
+
+
+    if(left < 150){
+        left+=1;
+        box.style.left = left + 'px';
+    }
+    else  if(topUp < 150){
+        topUp+=1;
+        box.style.top = topUp + 'px';
+    }
+    else if (right > 0){
+        right-=1;
+        box.style.left = right + 'px';
+    }
+    else if(bottomDown > 0){
+        bottomDown -= 1;
+        box.style.top = bottomDown + 'px';
+    }
+    
+
+
+
+}
+var time = setInterval(move, 50);
+
+
+</script>
+</body>
+</html>
